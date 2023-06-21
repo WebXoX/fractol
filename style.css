@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#canva1{
+	background: black;
+	position: absolute;
+	/* width: 1000px;
+	height: 800px; */
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
