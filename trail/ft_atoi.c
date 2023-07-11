@@ -6,7 +6,7 @@
 /*   By: jperinch <jperinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 08:26:28 by jperinch          #+#    #+#             */
-/*   Updated: 2023/07/10 13:36:45 by jperinch         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:08:46 by jperinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,36 @@ float ft_atof(const char *nptr, int *status, int sign){
 	char ** npt;
 	float result;
 	float des;
-
+	int negi;
+	
+	des = 0;
 	npt = ft_split(nptr,'.');
-	if(npt[2])
-	{	
-		*status = 1;
-		return 0;
-	}
-	 if (npt[0])
-		result = ft_atoi(npt[0], status, sign);
-
-	 if (npt[1])
-		des = (float)ft_atoi(npt[1], status, sign);
-		while((int)des > 0)	
-			des= ((float)des)/10.0;
-		if (result/1==-1)
-			des*=-1;
+	// if (npt[2]!= NULL)
+	// {	
+	// 	*status = 1;
+	// 	return 0;
+	// }
+	 if (npt[0]!= NULL)
+		result = ft_atoi(npt[0], status, &sign);
+		negi =sign;
+		sign = 1;
+	 if (npt[1]!= NULL)
+		des = (float)ft_atoi(npt[1], status, &sign);
+		while(des > 1)	
+			des= (des)/10.0;
+		if (negi == -1)
+			des *= -1;
 	result += des;
 	return result;
 }
 
-int	ft_atoi(const char *nptr, int *status, int sign)
+int	ft_atoi(const char *nptr, int *status, int *sign)
 {
 	int			i;
 	long long	result;
 
 	result = 0;
-	i = spacexsign(nptr, 0, &sign);
+	i = spacexsign(nptr, 0, sign);
 	while (nptr[i] != '\0')
 	{
 		
@@ -63,17 +66,17 @@ int	ft_atoi(const char *nptr, int *status, int sign)
 			result = result * 10 + (nptr[i] - '0');
 		else
 			(*status) = 1;
-		if (sign == -1 && result > 2147483648)
+		if ((*sign)  == -1 && result > 2147483648)
 		{
 			(*status) = 1;
 			return (result);
 		}
-		if (sign == 1 && result > 2147483647)
+		if ((*sign) == 1 && result > 2147483647)
 		{
 			(*status) = 1;
 			return (result);
 		}
 		i++;
 	}
-	return (result * sign);
+	return (result * (*sign));
 }

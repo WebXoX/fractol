@@ -6,7 +6,7 @@
 /*   By: jperinch <jperinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:50:24 by jperinch          #+#    #+#             */
-/*   Updated: 2023/07/10 13:27:08 by jperinch         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:55:07 by jperinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 char				*ft_strchr(const char *s, int c);
 char				**ft_split(char const *s, char c);
 char				*ft_substr(const char *s, unsigned int start, size_t len);
-int					ft_atoi(const char *nptr, int *status, int sign);
+int					ft_atoi(const char *nptr, int *status, int * sign);
 void				freed(char **a);
 size_t				ft_strlen(const char *s);
 t_list				*split(char *argc, int *status);
