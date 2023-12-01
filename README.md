@@ -1,10 +1,12 @@
 # Fractol
+
+## WHAT IS A MLX-LIBRARY
+A Graphical interface API with limited features made by 42 for students to do graphic projects like <br> fractol, so_loong, fdf, cub3d and Minirt, with the features available in the library.
+
 ## WHAT IS A FRACTOL 
 Never-ending patterns that look similar across different scales.
 Here are some examples of:-
 
-## WHAT IS A MLX-LIBRARY
-A Graphical interface API with limited features made by 42 for students to do graphic projects like <br> fractol, so_loong, fdf, cub3d and Minirt, with the features available in the library.
 
 Javascript attempt :-
 
